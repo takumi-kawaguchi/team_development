@@ -1,0 +1,13 @@
+class CreateReviews < ActiveRecord::Migration[5.1]
+  def change
+    create_table :reviews do |t|
+      t.int :user_id
+      t.int :book_id
+      t.string :r_title
+      t.string :context
+      t.int :rating
+
+      t.timestamps
+    end
+  end
+end
