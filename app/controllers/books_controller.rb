@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 class BooksController < ApplicationController
   def index
+    if params[:search]
+      @books = Book.where(title: params[:search])
+    end
   end
   
   def show

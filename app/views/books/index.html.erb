@@ -1,6 +1,15 @@
 <h1>本検索</h1>
-<%= form_tag(books_path) do %>
+<%= form_tag(books_path, method: :get) do %>
 <%= text_field_tag :search %>
 <%= submit_tag 'Search', :name => nil %>
+<% end %>
 
+<% if params[:search].present? %>
+<%   if @books.present? %>
+<%     @books.each do |book| %>
+<%= book.title %>
+<%     end %>
+<%   else %>
+<h3>検索結果がありません</h3>
+<%   end %>
 <% end %>
