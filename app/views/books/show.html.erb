@@ -1,6 +1,13 @@
-<h1>ブック詳細</h1>
+<h1><%= @book.title %>グループ詳細</h1>
 <%= @book.title%>
 <%= @book.author%>
 <%= @book.publisher%>
-<h2>レビュー</h2>
+<h2>レビュー一覧</h2>
+<% @reviews.each do |review|%>
+  <%= link_to review.title, review%>
+  <br>
+<% end %>
+<br>
+<%= link_to "新しいレビューを投稿する", new_review_path%>
+
 

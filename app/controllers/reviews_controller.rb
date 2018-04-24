@@ -4,8 +4,9 @@ class ReviewsController < ApplicationController
   end
   
   def show
-    id = params[:id]
+    id      = params[:id]
     @review = Review.find(id)
+    @book   = Book.find(@review.book_id)
   end
   
   def new

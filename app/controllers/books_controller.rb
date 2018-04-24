@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 class BooksController < ApplicationController
-  def index
-  end
-  
   def show
-    id = params[:id]
-    @book = Book.find(id)
-    
+    @book    = Book.find(params[:id])
+    @reviews = Review.where(book_id: params[:id]).all
+    @books   = Book.all
   end
 
   def new

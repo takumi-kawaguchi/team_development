@@ -1,3 +1,14 @@
 <p>あなたのページ</p>
 <%= current_user&.name%>
 <%= current_user.email%>
+<br>
+<% @books.each do |book| %>
+  <%= link_to book.title, book %>
+  <br>
+<% end %>
+
+<p>あなたへのおすすめ/p>
+<% @books.each do |book|%>
+  <%= book.title %>
+  <br>
+<% end %>
