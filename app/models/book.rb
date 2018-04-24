@@ -6,7 +6,7 @@ class Book < ApplicationRecord
   # データ検証(入力に制限をかけるなど)：validation
   validates :title, :author, presence: true # presence：必須
   validates :title, :author, :publisher, length: { maximum: 100} # length {}：文字数制限
-  validates :title, :uniqueness: true
+  validates :title, uniqueness: true
   validate :validates_past_published_date # 独自にデータ検証かける場合はvalidatesではなくvalidate 
 
   # validates :title, presence: true, length: { maximum: 100 }, uniqueness: true
