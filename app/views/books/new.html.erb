@@ -1,7 +1,7 @@
 <% if @book.errors.any? 
      # エラーがあるかを確認し、あった場合表示
 %>
-  <div id="error_explanation"> // HTMLのid
+  <div id="error_explanation">
    <ul>
     <% @book.errors.full_messages.each do |message| %>
     <% 1 # @book.errors.full_messagesでerrorに対するmsg配列を取得 %>
