@@ -5,5 +5,4 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     get books_new_url
     assert_response :success
   end
-
 end
