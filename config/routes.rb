@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   get 'home/welcome'
 
+  resources :users
   root to: 'home#index'
   
 end
