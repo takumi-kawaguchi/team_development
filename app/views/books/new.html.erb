@@ -1,0 +1,33 @@
+<% if @book.errors.any? 
+     # エラーがあるかを確認し、あった場合表示
+%>
+  <div id="error_explanation">
+   <ul>
+    <% @book.errors.full_messages.each do |message| %>
+    <% 1 # @book.errors.full_messagesでerrorに対するmsg配列を取得 %>
+    <% 1 # eachを用いてerror msgを１つずつ表示 %>
+    <li>
+     <%= message %>
+    </li>
+    <% end %>
+   </ul>
+   </div>
+<% end %>
+
+<%= form_for @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title 
+        # テキスト：text_field
+  %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :published_date %>  
+  <%= f.date_field :published_date
+      # 日付：date_field
+  %>
+  <%= f.label :publisher %> 
+  <%= f.text_field :publisher %>
+  <%= f.submit
+        # 登録するボタン
+  %>
+<% end %>
