@@ -1,7 +1,6 @@
-<h1>ブック一覧</h1>
-<% @books.each do |book| %>
-
-<p><%= link_to book.title, controller: 'books', action: 'show',
-            id: book.id %></p>
+<h1>本検索</h1>
+<%= form_tag(books_path) do %>
+<%= text_field_tag :search %>
+<%= submit_tag 'Search', :name => nil %>
 
 <% end %>
