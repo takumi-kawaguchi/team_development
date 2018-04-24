@@ -1,0 +1,17 @@
+<%= form_for @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title 
+        # テキスト：text_field
+  %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :published_date %>  
+  <%= f.date_field :published_date
+      # 日付：date_field
+  %>
+  <%= f.label :publisher %> 
+  <%= f.text_field :publisher %>
+  <%= f.submit
+        # 登録するボタン
+  %>
+<% end %>
