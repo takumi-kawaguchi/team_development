@@ -4,7 +4,8 @@ class ReviewsController < ApplicationController
   end
   
   def show
-    
+    id = params[:id]
+    @review = Review.find(id)
   end
   
   def new
