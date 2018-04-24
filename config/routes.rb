@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   
   get 'home/welcome'
 
-  resources :users
+  get 'users/my',      to: "users#show", as: :user
+  get 'users/my/edit', to: "users#edit", as: :edit_user
+  put 'users/my',      to: "users#update", as: :update_user
   resources :reviews
   root to: 'home#index'
   
