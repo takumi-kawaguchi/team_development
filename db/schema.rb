@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180423080043) do
 
-  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "title", null: false
     t.string "author", null: false
     t.date "published_date"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180423080043) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.bigint "user_id", null: false
     t.bigint "book_id", null: false
     t.string "title", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180423080043) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
