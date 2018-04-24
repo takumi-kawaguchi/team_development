@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'pages/show'
 
   resources :books, only: [:index, :new, :create, :show]
+  
+  get 'home/welcome'
 
   root to: 'home#index'
   
